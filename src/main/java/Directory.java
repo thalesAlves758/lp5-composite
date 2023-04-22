@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Directory implements FileSystemComponent {
@@ -18,12 +19,16 @@ public class Directory implements FileSystemComponent {
     }
 
     public String display() {
-        String files = this.name + "\n";
+        String content = "Directory: " + this.name + "\n";
 
         for (FileSystemComponent component : this.components) {
-            files += "|--> " + component.display() + "\n";
+            content += component.display();
         }
 
-        return files;
+        return content;
+    }
+
+    public List<FileSystemComponent> getComponents() {
+        return this.components;
     }
 }
