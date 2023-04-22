@@ -6,6 +6,6 @@ public class File implements FileSystemComponent{
     }
 
     public String display() {
-        return this.name;
+        return "File: " + this.name + "\n";
     }
 }
